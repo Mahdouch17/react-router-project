@@ -1,8 +1,7 @@
-import React, { useState } from "react";
+import React from "react";
 import { Rating } from "react-simple-star-rating";
 
 function MovieCard(props) {
-  // console.log("props: ", props);
   return (
     <div
       style={{

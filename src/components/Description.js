@@ -2,18 +2,15 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 const Description = (props) => {
-  console.log("props", props);
-  console.log("match", props.match);
-  console.log("moviesToDisplay", props.moviesToDisplay);
   var movie = props.moviesToDisplay.find(
-    (movie) => movie.id == props.match.params.movieId
+    (movie) => movie.title === props.match.params.movieTitle
   );
   var movieData;
   if (movie)
     movieData = (
       <div>
+        <h2>Description page</h2>
         <div>{movie.description}</div>
-        {/* <video width="750" height="500" controls><source src={movie.trailerLink}></source></video> */}
         <iframe
           width="853"
           height="480"
@@ -29,7 +26,7 @@ const Description = (props) => {
   return (
     <div>
       {movieData}
-      <Link to="/">back to home</Link>
+      <Link to="/"><h3>back to home</h3></Link>
     </div>
   );
 };

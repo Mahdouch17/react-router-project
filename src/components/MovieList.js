@@ -1,7 +1,6 @@
-import React, { useState } from "react";
+import React from "react";
 import MovieCard from "./MovieCard";
-import { Link, Route } from "react-router-dom";
-import Description from "./Description";
+import { Link } from "react-router-dom";
 
 function MovieList(props) {
   console.log("match", props.match);
@@ -16,7 +15,7 @@ function MovieList(props) {
         }}
       >
         {props.moviesToDisplay.map((movie) => (
-          <Link to={`/${movie.id}`}>
+          <Link to={`/${movie.title}`}>
             <MovieCard key={movie.id} value={movie} />
           </Link>
         ))}

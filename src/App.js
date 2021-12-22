@@ -8,10 +8,7 @@ import Filter from "./components/Filter";
 import { Route, Switch, Link } from "react-router-dom";
 import Description from "./components/Description";
 
-function App({ match }) {
-  console.log("route", Route);
-  console.log("switch", Switch);
-  console.log("match", match);
+function App() {
   const movies = [
     {
       id: 0,
@@ -75,6 +72,7 @@ function App({ match }) {
           path="/"
           render={(props) => (
             <div>
+              <h2>Home page</h2>
               {show ? (
                 <div>
                   <ReturnButton onClick={handleReturnClickBtn} />
@@ -96,7 +94,7 @@ function App({ match }) {
           )}
         ></Route>
         <Route
-          path={`/:movieId`}
+          path={`/:movieTitle`}
           render={(props) => (
             <Description moviesToDisplay={moviesToDisplay} {...props} />
           )}
